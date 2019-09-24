@@ -1,0 +1,168 @@
+body {
+    font-family: sans-serif;
+    background-color: #ced0d2;
+}
+
+/*navigatie*/
+
+header {
+    background-color: #071520;
+    margin: -1em;
+}
+
+nav {
+    margin: 0em 3em 0em 3em;
+    max-width: 45em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: scroll;
+}
+
+header ul a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+header li {
+    border: transparent;
+    margin: 1em;
+    white-space: nowrap;
+}
+
+header a img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2em;
+    width: 20em;
+}
+
+header img{
+    
+}
+
+
+/*Alles na navigatie*/
+
+main {
+    background-color: #ced0d2;
+
+}
+
+#achtergrond {
+    width: 100%;
+    padding: 0em;
+}
+
+
+main h1 {
+    text-align: center;
+    padding: 0.5em 0em
+}
+
+
+/*stijling Sieraden*/
+main ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: wrap;
+    flex-basis: 50%;
+    margin: 0 auto;
+}
+
+main ul li {
+    list-style: none;
+    padding: 1em;
+    
+}
+
+main ul li img {
+    width: 15em;
+    margin: 1em;
+    
+}
+
+main ul li a {
+    display: block;
+    align-items: center;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+/*laptop weergave*/
+@media(min-width: 1024px){
+    
+    main ul{
+        width: 80em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-flow: wrap;
+        flex-basis: 50%;
+        margin: 0 auto;
+    }
+ 
+}
+
+/*ipad*/
+@media(min-width: 664px) and (max-width: 949px){
+
+    main ul{
+        width: 38em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-flow: wrap;
+        flex-basis: 50%;
+        margin: 0 auto;
+    }
+}
+
+/*mobiele weergave*/
+@media(max-width: 320px){
+    
+    main ul{
+        width: 38em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-flow: wrap;
+        flex-basis: 50%;
+        margin: 0 auto;
+}
+    
+    
+/*Detailpagina*/
+    
+main section header{
+    background-color: #ced0d2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
