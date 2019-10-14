@@ -1,156 +1,116 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Helvetica', sans-serif;
     background-color: #ced0d2;
+    margin: 0;
+    color: black;
 }
 
-/*navigatie*/
-
-header {
-    background-color: #071520;
-    margin: -1em;
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    text-decoration: none;
 }
 
-nav {
+a {
+    text-decoration: none;
+}
+
+/*header*/
+
+body > header {
+    background: #071520;
+}
+
+body > header h1 {
+    /*verborgen h1*/
+    visibility: hidden;
+    position: absolute;
+    left: -666em;
+}
+
+body > header > a img {
+    /*logo*/
+    display: block;
+    width: 20em;
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2em;
+}
+
+/*navigatiebalk*/
+
+body > header > nav {
     margin: 0em 3em 0em 3em;
     max-width: 45em;
     margin-left: auto;
     margin-right: auto;
 }
 
-nav ul {
+body > header > nav ul {
     list-style: none;
+    border: transparent;
+    padding-bottom: 2em;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     overflow: scroll;
 }
 
-header ul a {
+body > header > nav ul a {
+    font-family: sans-serif;
     color: white;
     text-decoration: none;
-    background-color: transparent;
-    font-family: sans-serif;
     text-transform: uppercase;
-}
 
-header li {
-    border: transparent;
+    background-color: transparent;
     margin: 1em;
+    white-space: nowrap;
+    border: transparent;
     white-space: nowrap;
 }
 
-header a img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 2em;
-    width: 20em;
-}
 
-header img{
-    
-}
+
+
+
 
 
 /*Alles na navigatie*/
 
-main {
-    background-color: #ced0d2;
+/*Stijling 'Favorieten'*/
 
-}
-
-#achtergrond {
-    width: 100%;
-    padding: 0em;
-}
-
-
-main h1 {
-    text-align: center;
-    padding: 0.5em 0;
-}
-
-
-/*stijling Sieraden*/
-main ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-flow: wrap;
-    flex-basis: 50%;
-    margin: 0 auto;
-}
-
-main ul li {
-    list-style: none;
-    padding: 1em;
-    
-}
-
-main ul li img {
-    width: 15em;
-    margin: 1em;
-    
-}
-
-main ul li a {
-    display: block;
-    align-items: center;
+body.index > section > a > article {
     background-color: white;
-    text-decoration: none;
     color: black;
     text-align: center;
 }
 
-/*laptop weergave*/
-@media(min-width: 1024px){
-    
-    main ul{
-        width: 80em;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-flow: wrap;
-        flex-basis: 50%;
-        margin: 0 auto;
-    }
- 
+body.index article img {
+    max-width: 100%;
 }
 
-/*ipad*/
-@media(min-width: 664px) and (max-width: 949px){
+/*Stijling 'Sieraden'*/
 
-    main ul{
-        width: 38em;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-flow: wrap;
-        flex-basis: 50%;
-        margin: 0 auto;
-    }
-}
-
-/*mobiele weergave*/
-@media(max-width: 320px){
-    
-    main ul{
-        width: 38em;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-flow: wrap;
-        flex-basis: 50%;
-        margin: 0 auto;
-}
-    
-    
-/*Detailpagina*/
-    
-main section header{
+main.index {
     background-color: #ced0d2;
 }
 
+/*stijling kopjes sieraden*/
+
+body.index > main > a > article > button {
+    position: absolute;
+}
+
+body.index > main > h2 {
+    margin-top: 2em;
+    text-align: center;
+    margin: ;
+}
 
 
 
@@ -158,6 +118,103 @@ main section header{
 
 
 
+/*iPhone*/
+
+@media (max-width: 663px) {
+
+
+    /*    stijling favorieten*/
+    body.index > section {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    body.index > section > a > article {
+        padding: 1em;
+        margin: 1em 0em
+    }
+    /*    foto's favorieten weg*/
+    body.index > section > a > article > img {
+        display: none;
+    }
+
+    /*    stijling kopjes favorieten*/
+    body.index > section > a > article > h3,
+    p {
+        margin: 0em;
+    }
+
+
+    /*    stijling sieraden*/
+    /*    h2 kopje sieraden*/
+    body.index main > h2 {
+        grid-column: span 2;
+    }
+
+    /*    grid sieraden*/
+    body.index main {
+        display: grid;
+        grid-column: 1 / 3;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    body.index main > a > article {
+        position: relative;
+    }
+
+    body.index main > a > article > button {
+        
+        position: absolute;
+        
+        background: white;
+        border: none;
+        padding: .5em;
+        
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+        
+        margin: auto;
+        right: 25%;
+        left: 25%;
+        bottom: 10%;
+    }
+
+
+
+    /*iPad*/
+    @media(min-width: 664px) and (max-width: 949px) {
+
+        /*Stijling favorieten*/
+        /*    h2 kopje favorieten*/
+        body.index section h2 {
+            grid-column: span 2;
+        }
+
+        /*    hele section grid*/
+        body.index > section {
+            display: grid;
+            grid-column: 1/3;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1em;
+
+            max-width: 75%;
+            margin: auto;
+        }
+
+        body.index > section > a > article {
+            border: solid white 1em;
+
+        }
+
+
+        body.index > section > a > article > h3,
+        p {
+            margin: 1em .5em .5em .5em;
+        }
 
 
 
@@ -165,4 +222,36 @@ main section header{
 
 
 
+        /*Stijling sieraden*/
+        body.index > main > a > article {
 
+            display: grid;
+            grid-column: 1/3;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1em;
+            margin: 0 auto;
+        }
+
+    }
+
+
+
+    /*Stijling 'Sieraden' iPad*/
+    body.index main > a > article > h3 {
+
+        position: absolute;
+        bottom: 0em;
+        left: 25%;
+        background-color: white;
+        background: white;
+    }
+
+
+
+
+    /*laptop weergave*/
+    /*@media(min-width: 30em) {}*/
+    /*Detailpagina*/
+    main.detail {
+        background-color: #ced0d2;
+    }
