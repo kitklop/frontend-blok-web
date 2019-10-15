@@ -120,7 +120,7 @@ body.index > main > h2 {
 
 /*iPhone*/
 
-@media (max-width: 663px) {
+@media only screen and (max-width: 663px) {
 
 
     /*    stijling favorieten*/
@@ -166,92 +166,181 @@ body.index > main > h2 {
     }
 
     body.index main > a > article > button {
-        
+
         position: absolute;
-        
+
         background: white;
         border: none;
         padding: .5em;
-        
+
         font-size: 1em;
         text-transform: uppercase;
         font-weight: bold;
-        
+
         margin: auto;
         right: 25%;
         left: 25%;
         bottom: 10%;
     }
+}
 
 
+/*iPad*/
 
-    /*iPad*/
-    @media(min-width: 664px) and (max-width: 949px) {
+@media only screen and (min-width: 664px) {
 
-        /*Stijling favorieten*/
-        /*    h2 kopje favorieten*/
-        body.index section h2 {
-            grid-column: span 2;
-        }
+    /*Stijling favorieten*/
+    /*    h2 kopje favorieten*/
+    body.index section h2 {
+        grid-column: span 2;
+    }
 
-        /*    hele section grid*/
-        body.index > section {
-            display: grid;
-            grid-column: 1/3;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 1em;
+    /*    hele section grid*/
+    body.index > section {
+        display: grid;
+        grid-column: 1/3;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
 
-            max-width: 75%;
-            margin: auto;
-        }
+        max-width: 75%;
+        margin: auto;
+    }
 
-        body.index > section > a > article {
-            border: solid white 1em;
-
-        }
-
-
-        body.index > section > a > article > h3,
-        p {
-            margin: 1em .5em .5em .5em;
-        }
-
-
-
-
-
-
-
-        /*Stijling sieraden*/
-        body.index > main > a > article {
-
-            display: grid;
-            grid-column: 1/3;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 1em;
-            margin: 0 auto;
-        }
+    body.index > section > a > article {
+        border: solid white 1em;
 
     }
 
 
+    body.index > section > a > article > h3,
+    p {
+        margin: 1em .5em .5em .5em;
+    }
 
-    /*Stijling 'Sieraden' iPad*/
-    body.index main > a > article > h3 {
+
+
+    /*Stijling sieraden*/
+    body.index main > h2 {
+        grid-column: span 2;
+    }
+
+    /*    grid sieraden*/
+    body.index main {
+        display: grid;
+        grid-column: 1 / 3;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    body.index main > a > article {
+        position: relative;
+    }
+
+    body.index main > a > article > button {
 
         position: absolute;
-        bottom: 0em;
-        left: 25%;
-        background-color: white;
+
         background: white;
+        border: none;
+        padding: .5em;
+
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        margin: auto;
+        right: 25%;
+        left: 25%;
+        bottom: 10%;
+    }
+}
+
+/*laptop weergave*/
+
+@media (min-width: 1440px) {
+
+    /*Stijling favorieten*/
+    /*    h2 kopje favorieten*/
+    body.index section h2 {
+        grid-column: span 4;
+    }
+
+    /*    hele section grid*/
+    body.index > section {
+        display: grid;
+        grid-column: 1/5;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 1em;
+
+        max-width: 75%;
+        margin: auto;
+    }
+
+    body.index > section > a > article {
+        border: solid white 1em;
+
     }
 
 
-
-
-    /*laptop weergave*/
-    /*@media(min-width: 30em) {}*/
-    /*Detailpagina*/
-    main.detail {
-        background-color: #ced0d2;
+    body.index > section > a > article > h3,
+    p {
+        margin: 1em .5em .5em .5em;
     }
+
+
+    /*    stijling sieraden*/
+    /*    h2 kopje sieraden*/
+    body.index main > h2 {
+        grid-column: span 4;
+    }
+
+    /*    grid sieraden*/
+    body.index main {
+        display: grid;
+        grid-column: 1 / 5;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 1em;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    body.index main > a > article {
+        position: relative;
+    }
+
+    body.index main > a > article > button {
+
+        position: absolute;
+
+        background: white;
+        border: none;
+        padding: .5em;
+
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        margin: auto;
+        right: 25%;
+        left: 25%;
+        bottom: 10%;
+    }
+}
+
+
+
+
+
+/*DETAILPAGINA*/
+
+body.detail main{
+    display: grid;
+    grid-column: 1/3;
+    grid-template-columns: 1fr 1fr;
+}
+
+body.detail main h1{
+    grid-column: span 2;
+}
