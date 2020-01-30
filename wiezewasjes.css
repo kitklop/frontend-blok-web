@@ -21,6 +21,7 @@ BODY
 body{
 margin: 0;
 color: black;
+min-width: 
 }
 
 body.index {
@@ -182,7 +183,6 @@ padding: 0 12.5%;
 }
 
 footer > section {
-;
 font-size: 75%;
 }
 
@@ -191,7 +191,7 @@ list-style: none;
 padding: 0;
 }
 
-footer > section > h3{
+footer > section > h3 {
 padding: .5em;
 color: black;
 background-color: white;
@@ -202,8 +202,6 @@ margin: 0
 footer > section > ul > li > a {
 margin-top: 1em;
 color: white;
-;
-
 }
 
 footer > section:last-of-type > ul {
@@ -236,9 +234,25 @@ font-size: 75%;
 
 /* HELE FIELDSET */
 body.detail > main > section > form > fieldset {
-padding: 0;
-    border: none;
-    margin-top: -em;
+padding: 2em;
+border: none;
+background-color: #ced0d2;
+}
+
+body.detail > main > section > form > fieldset h2 {
+padding-top: 2em;
+}
+
+body.detail > main > section > form > fieldset label{
+text-align: right;
+margin-right: 1em;
+}
+
+/* AANTAL KIEZEN SELECTOR */
+body.detail > main select{
+border: solid 0;
+border-radius: ;
+display: inline;
 }
 
 /* VOEG TOE AAN WINKELWAGENTJE BUTTON */
@@ -251,12 +265,7 @@ padding: 1em;
 margin-top: 1.5em;
 }
 
-/* AANTAL KIEZEN SELECTOR */
-body.detail > main select{
-border: solid black 1px;
-border-radius: 0;
-display: inline;
-}
+
 
 
 
@@ -425,12 +434,60 @@ flex-direction: row;
 DETAILPAGINA - IPHONE
 ---------------------------------------------*/
 body.detail > main > section {
-margin: 0 2em
+margin: 0 2em;
 }
 
 body.detail > main > section > img {
 width: 100%;
 box-shadow: .4em .4em .4em grey;
+}
+
+body.detail > main > section > form > fieldset{
+text-align: center;
+margin-bottom: 3em;
+}
+
+
+/* DETAIL - IPHONE - MISSCHIEN VINDT JE DIT OOK LEUK */
+body.detail > section {
+margin: 2em
+}
+
+/* DETAIL - IPHONE - KOPJE MISSCHIEN VINDT JE DIT OOK LEUK */
+body.detail > section > h2 {
+margin-top: 5em;
+
+}
+
+body.detail > section > ul {
+list-style: none;
+border: transparent;
+padding-bottom: 2em;
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+overflow: scroll;
+}
+
+body.detail > section > ul > li{
+padding: 0 .5em;
+}
+
+/* DETAIL - IPHONE - KAARTJES MISSCHIEN VINDT JE DIT OOK LEUK*/
+body.detail > section > ul > li > a > article {
+background-color: white;
+color: black;
+text-align: center;
+padding: 1em;
+margin: 1em 0em;
+box-shadow: .4em .4em 2em .4em grey;
+min-height: 13em;
+}
+
+/*DETAIL - IPHONE - AFBEELDINGEN MISSCHIEN V.*/
+body.detail > section > ul > li > a > article > img {
+max-width: 20em;
 }
 
 } /* EINDE IPHONE MEDIA QUERY */
@@ -517,7 +574,7 @@ width: auto;
 footer {
 display: grid;
 grid-column: 1 / 4;
-grid-column:
+grid-column: 
 }
 
 /*---------------------------------------------
@@ -562,23 +619,26 @@ body.detail > main > section > article {
 grid-column: span 3;
 }
 
-/* DETAIL - IPAD - MISSCHIEN VINDT JE DIT OOK LEUK */
-body.detail > section {
+/* DETAIL - IPAD - MISSCHIEN VIND JE DIT OOK LEUK */
+body.detail > section > ul {
+
+overflow: 0;
 display: grid;
 grid-column: 3;
 grid-template-columns: 1fr 1fr 1fr;
 grid-gap: 1em;
 margin: 5em;
+    
 }
 
-/* DETAIL - IPAD - KOPJE MISSCHIEN VINDT JE DIT OOK LEUK */
+/* DETAIL - IPAD - KOPJE MISSCHIEN VIND JE DIT OOK LEUK */
 body.detail > section > h2 {
 grid-column: span 3;
 margin-top: 5em;
 }
 
-/* DETAIL - IPAD - KAARTJES MISSCHIEN VINDT JE DIT OOK LEUK*/
-body.detail > section > a > article {
+/* DETAIL - IPAD - KAARTJES MISSCHIEN VIND JE DIT OOK LEUK*/
+body.detail > section > lu > li > a > article {
 background-color: white;
 color: black;
 text-align: center;
@@ -589,7 +649,7 @@ min-height: 13em;
 }
 
 /*DETAIL - IPAD - AFBEELDINGEN MISSCHIEN V.*/
-body.detail > section > a > article > img {
+body.detail > section > lu > li > a > article > img {
 max-width: 100%;
 }
 
@@ -600,6 +660,12 @@ max-width: 100%;
 LAPTOP MEDIA QUERY
 ---------------------------------------------*/
 @media only screen and (min-width: 68.75em) {
+
+/* LAPTOP NAV */
+nav{
+max-width: 60em;
+}
+
 
 /* INDEX - LAPTOP - FAVORIETEN */
 body.index section h2 {
@@ -669,21 +735,39 @@ display: grid;
 grid-column: 1/4;
 grid-template-columns: 1fr 1fr 1fr;
 grid-gap: .5em;
+
+min-width: 100%;
 }
 
 footer > section {
 display: flex;
 flex-direction: column;
 padding: .5em;
+
 }
 
 footer > section > h3 {
 text-align: left;
 }
 
-footer img {
+footer > section > ul > li > a > img {
 max-width: 3em;
+    flex-direction: row;
+    position: absolute;
 }
+    
+/*
+    footer > section > ul > li > a > img:first-of-type {
+    position: absolute;    
+    }
+*/
+    
+    footer > section > ul > li > a > img:last-of-type {
+    position: relative;    
+        right:10%;
+        
+    }
+
 
 footer > section:last-of-type a {
 
