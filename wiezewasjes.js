@@ -1,6 +1,12 @@
-var body = detail.body;
-var buttonWinkelwagentje = detail.querySelector
+var header = document.querySelector('header');
+//leeg wagentje
 
-funtion addProduct() {
-    body.classList.add('toegevoegd');
+var toevoegen = document.querySelector('button.voegToe'); 
+//voeg toe aan winkelmandje
+
+toevoegen.addEventListener('click', winkelwagentje);
+
+function winkelwagentje(event){
+    event.preventDefault();
+    header.classList.toggle('add');
 }
