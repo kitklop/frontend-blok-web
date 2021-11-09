@@ -64,6 +64,10 @@ a {
 text-decoration: none;
 }
 
+img {
+border: none;
+}
+
 /* ---------------------------------------------
 HEADER
 -----------------------------------------------*/
@@ -71,8 +75,12 @@ body > header {
 background: #071520;
 }
 
-body > header h1 {
+body > header{
+    
+}
+
 /*verborgen h1*/
+body > header h1 {
 visibility: hidden;
 position: absolute;
 left: -666em;
@@ -88,24 +96,48 @@ margin-right: auto;
 padding-top: 2em;
 }
 
-/* WINKELWAGENTJE*/
-body > header > button {
-background-image: url(Afbeeldingen/winkelwagentje.svg);
-background-color: #071520;
-background-repeat: no-repeat;
-width: 2.5em;
-height: 2.5em;
+/* WINKELWAGENTJE - Stijling */
+
+header > button{
+    
+width: 4em;
 
 position: absolute;
 left: 90%;
 top: 5%;
 
 border: none;
+background-color: transparent;
 }
 
-/* WINKELWAGENTJE TOEGEVOEGD*/
-body.toegevoegd > header > button {
-background-image: url(Afbeeldingen/winkelwagentjeStip.svg);
+/* -- WINKELWAGENTJE - Vol/leeg js -- */
+
+/* Leeg img */
+body.detail > header > button > img:first-of-type{
+    opacity: 100;
+    
+    position: absolute;
+    width: 3em;
+    
+}
+
+/* Leeg img */
+body.detail > header.add > button > img:first-of-type{
+    opacity: 100; 
+    
+    
+}
+
+/* Vol img*/
+body.detail > header > button > img:nth-of-type(2){
+opacity: 0;
+width: 3em;
+        transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Vol img */
+body.detail > header.add > button > img:nth-of-type(2){
+    opacity: 100; 
 }
 
 /* NAVIGATIEBAR */
@@ -173,9 +205,11 @@ text-align: center;
 margin: 0;
 }
 
+
 /*---------------------------------------------
 FOOTER ALGEMEEN
 ---------------------------------------------*/
+
 footer {
 background-color: #071520;
 width: auto;
@@ -186,7 +220,15 @@ footer > section {
 font-size: 75%;
 }
 
-footer > section > ul{
+footer > section:nth-of-type(1), section:nth-of-type(2){
+margin-top: 6em;
+}
+
+footer > section:last-of-type{
+margin-bottom: 6em;
+}
+
+footer > section > ul {
 list-style: none;
 padding: 0;
 }
@@ -205,7 +247,6 @@ color: white;
 }
 
 footer > section:last-of-type > ul {
-background-color: red;
 display: inline-flex;
 flex-direction: row;
 align-items: flex-start;   
@@ -213,34 +254,36 @@ align-items: flex-start;
 
 
 /*---------------------------------------------
-DETAILPAGINA ALGEMEEN
+DETAILPAGINA
 ---------------------------------------------*/
+
+body.detail{
+    background-color: #071520;
+}
+
+body.detail > main > section:last-of-type > h2{
+    color: white;
+}
 
 /* NAVIGATIE PAD */
 body.detail > main > p:first-of-type {
 margin: 2em;
 word-spacing: .5em;
+    color: white;
 }
 
-/* PRODUCT BESCHRIJVING*/
-body.detail > main > section > article > p {
-margin-bottom: 1em;
-}
-
-/* TEKST MET* */
-body.detail > main > section > article > p:last-of-type {
-font-size: 75%;
+body.detail > main img{
+    
 }
 
 /* HELE FIELDSET */
 body.detail > main > section > form > fieldset {
 padding: 2em;
 border: none;
-background-color: #ced0d2;
+background-color: #fefaf5;
 }
 
 body.detail > main > section > form > fieldset h2 {
-padding-top: 2em;
 }
 
 body.detail > main > section > form > fieldset label{
@@ -250,9 +293,12 @@ margin-right: 1em;
 
 /* AANTAL KIEZEN SELECTOR */
 body.detail > main select{
-border: solid 0;
-border-radius: ;
 display: inline;
+    
+    border: solid 0;
+width: 3em;
+height: 2em;
+box-shadow: lightgrey 2px 2px;
 }
 
 /* VOEG TOE AAN WINKELWAGENTJE BUTTON */
@@ -263,8 +309,24 @@ text-transform: uppercase;
 font-weight: bold;
 padding: 1em;
 margin-top: 1.5em;
+    border: none;
 }
 
+/* PRODUCT BESCHRIJVING BLOK */
+body.detail > main > section > article {
+    padding: 1em;
+    background-color: #fefaf5;
+}
+
+/* TEKST */
+body.detail > main > section > article > p {
+margin-bottom: 1em;
+}
+
+/* DISCLAIMER TEKST CADEAUBON */
+body.detail > main > section > article > p:last-of-type {
+font-size: 75%;
+}
 
 
 
@@ -439,13 +501,16 @@ margin: 0 2em;
 
 body.detail > main > section > img {
 width: 100%;
-box-shadow: .4em .4em .4em grey;
 }
 
 body.detail > main > section > form > fieldset{
 text-align: center;
 margin-bottom: 3em;
 }
+    
+    body.detail > main > section > form h2{
+        padding-top: 2em;
+    }
 
 
 /* DETAIL - IPHONE - MISSCHIEN VINDT JE DIT OOK LEUK */
@@ -481,7 +546,6 @@ color: black;
 text-align: center;
 padding: 1em;
 margin: 1em 0em;
-box-shadow: .4em .4em 2em .4em grey;
 min-height: 13em;
 }
 
@@ -598,7 +662,6 @@ grid-gap: 1em;
 body.detail > main > section > img {
 grid-column-start: 1;
 grid-column-end: 2;
-margin-bottom: 2em;
 grid-row: span 2;
 }
 
@@ -608,11 +671,14 @@ grid-column-start: 2;
 grid-column-end: 4;
 grid-row-start: 2;
 grid-row-end: 3;
+grid-row: span 2;
+    
+    position: relative;
+transform: translateY(-21%);
 }
-
-body.detail > main > section > form > fieldset > option {
-font-family: "Abril Fatface", sans-serif;
-}
+    body.detail > main > section > form h2 {
+        padding-top: 2em;}
+    
 
 /* DETAIL - IPAD - PRODUCTBESCHRIJVING*/
 body.detail > main > section > article {
@@ -635,6 +701,7 @@ margin: 5em;
 body.detail > section > h2 {
 grid-column: span 3;
 margin-top: 5em;
+    color: white;
 }
 
 /* DETAIL - IPAD - KAARTJES MISSCHIEN VIND JE DIT OOK LEUK*/
@@ -644,7 +711,6 @@ color: black;
 text-align: center;
 padding: 1em;
 margin: 1em 0em;
-box-shadow: .4em .4em 2em .4em grey;
 min-height: 13em;
 }
 
@@ -756,12 +822,11 @@ max-width: 3em;
     position: absolute;
 }
     
-/*
+
     footer > section > ul > li > a > img:first-of-type {
     position: absolute;    
     }
-*/
-    
+
     footer > section > ul > li > a > img:last-of-type {
     position: relative;    
         right:10%;
